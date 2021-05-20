@@ -58,3 +58,12 @@ for speaker in lst_speaker:
         speaker.calculate(object)
 
 print(sd.query_devices())
+
+output_matrix = lst_speaker[0].array
+for object in lst_speaker[1::]:
+    output_matrix = np.column_stack((output_matrix, object.array))
+
+print(output_matrix.shape)
+
+sd.play(data, fs, device=args.device)
+sd.wait()
