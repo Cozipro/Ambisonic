@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ambisonic_player", "ambisonic_player.pyproj", "{0A719E83-3408-40E2-AD5B-8B876AD4AAFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A719E83-3408-40E2-AD5B-8B876AD4AAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A719E83-3408-40E2-AD5B-8B876AD4AAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1824B0C5-6FE1-489D-A547-D53BF08C0802}
+	EndGlobalSection
+EndGlobal
