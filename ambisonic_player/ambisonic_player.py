@@ -2,6 +2,7 @@ import numpy as np
 import sounddevice as sd
 from scipy.io import wavfile
 
+print("start")
 
 file = "countdown1.wav"
 fs, data = wavfile.read(file)
@@ -50,20 +51,27 @@ lst_speaker.append(speaker_object(-np.pi/4, 0, len(data)))  #RF
 lst_speaker.append(speaker_object(3*np.pi/4, 0, len(data))) #LB
 lst_speaker.append(speaker_object(-3*np.pi/4, 0, len(data)))#RB
 
-lst_sound_object.append(objet_sonore(data, np.pi/4))
+lst_sound_object.append(objet_sonore(data, np.pi/2))
 #objet2 = objet_sonore(data2, -np.pi/4)
+
+#np.linspace(-np.pi,np.pi, len(data))
+
+
 
 for speaker in lst_speaker:
     for object in lst_sound_object:
         speaker.calculate(object)
 
-print(sd.query_devices())
+devices = sd.query_devices()
+print(devices)
+sd.default.device = 3
 
 output_matrix = lst_speaker[0].array
-for object in lst_speaker[1::]:
+for object in lst_speaker[1:2]:
     output_matrix = np.column_stack((output_matrix, object.array))
 
-print(output_matrix.shape)
+print("stop")
 
-sd.play(data, fs, device=args.device)
+sd.play(output_matrix/2**15, fs, )
 sd.wait()
+print("stop2")
